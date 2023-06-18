@@ -1,17 +1,21 @@
+import { getActiveElement } from '@testing-library/user-event/dist/utils';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(
+  <>
+
+    <h1>First Challenge</h1>
+    <p>Top 5 Amazon Web series</p>
+    <ol>
+      <li>Mirzapur</li>
+      <li>Breath</li>
+      <li>Panchayat</li>
+      <li>Farzi</li>
+      <li>Hostel Daze</li>
+    </ol>
+    </>
+  ,
+  
+  document.getElementById("root"));
