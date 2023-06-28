@@ -1,26 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import Greetings from './Greetings';
-import {add,sub} from './Calculator';
-import NamesList from './NamesList';
+// import {add,sub} from './Calculator';
+// import NamesList from './NamesList';
 
 
-function App()
-{
-  return (
+
+
+const App = () =>{
+
+  const state = useState();
+
+  let currentTime = new Date().toLocaleTimeString();
+
+//  const timeNow = currentTime.toLocalTimeString();
+  const [count, setCount] = useState(currentTime);
+
+  const fetchTime = () => {
+    let currentTime = new Date().toLocaleTimeString();
+    setCount(currentTime);
+  };
+
+
+  return(
     <>
-    <NamesList   
-      Name= "Umair"
-     />
-     <NamesList   
-      Name= "Zubair"
-     />
-    {/* <ul>
-      <li>Sum of two numbers is {add(4,5)}</li>
-      <li>Sub of two numbers is {sub(6,5)}</li>
-    </ul> */}
-  </>
+      <h1>{currentTime}</h1>
+      <button onClick={fetchTime}>Get Time</button>
+    </>
   );
-  
-}
+};
 
 export default App;
