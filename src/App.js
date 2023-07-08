@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import TodoList from './TodoList';
+// import TodoList from './TodoList';
 // import Greetings from './Greetings';
 // import {add,sub} from './Calculator';
 // import NamesList from './NamesList';
@@ -9,7 +9,23 @@ import TodoList from './TodoList';
 
 const App = () =>{
 
-  // const state = useState();
+  const state = useState();
+
+  const [count, setCount] = useState(0);
+
+  const increment = () =>{
+    setCount(count+1);
+  }
+
+  const decrement = () =>{
+    if(count < 1)
+    {
+      alert("Value Can't be less than 0");
+    }
+    else{
+      setCount(count-1);
+    }
+  }
 
   // let currentTime = new Date().toLocaleTimeString();
 
@@ -24,35 +40,38 @@ const App = () =>{
   // setInterval(fetchTime,1000);
 
 
-  const [inputValue, setInputValue] = useState("");
-  const [itemsList, setItemsList] = useState([]);
+  // const [inputValue, setInputValue] = useState("");
+  // const [itemsList, setItemsList] = useState([]);
 
-  const getInputValue = (event) =>{
+  // const getInputValue = (event) =>{
 
-    setInputValue(event.target.value);
-  }
+  //   setInputValue(event.target.value);
+  // }
 
-  const addTodo = () => {
-    setItemsList((oldItems) => {
-      return[...oldItems, inputValue];
-    })
-    setInputValue("");
+  // const addTodo = () => {
+  //   setItemsList((oldItems) => {
+  //     return[...oldItems, inputValue];
+  //   })
+  //   setInputValue("");
+  // }
 
-  }
-
-  const deleteItem = (id) => {
-    setItemsList((oldItems) => {
-      return oldItems.filter((arrElem, index) => {
-          return index !== id;
-      });
-    });
-  }
+  // const deleteItem = (id) => {
+  //   setItemsList((oldItems) => {
+  //     return oldItems.filter((arrElem, index) => {
+  //         return index !== id;
+  //     });
+  //   });
+  // }
 
 
   return(
     <>
       <div className='main-div'>
-        <div className='center-div'>
+
+      <h2>{count}</h2>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
+        {/* <div className='center-div'>
         <br />
         <h1>TODO List</h1> 
         <br />
@@ -70,7 +89,7 @@ const App = () =>{
               />;
             })}
         </ol>
-        </div>
+        </div> */}
 
       </div>
       {/* <h1>{currentTime}</h1> */}
